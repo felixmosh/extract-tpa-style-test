@@ -6,4 +6,4 @@ yarn-debug.log*
 yarn-error.log*
 dist/
 node_modules/
-
+extract-tpa-style-webpack-plugin/

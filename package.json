@@ -11,19 +11,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "css-loader": "^0.28.11",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.4.0",
-    "sass-loader": "^7.0.1",
-    "webpack": "^4.6.0",
-    "webpack-cli": "^2.1.2"
-  },
-  "dependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
-    "node-sass": "^4.9.0",
+    "css-loader": "^1.0.0",
+    "html-webpack-include-assets-plugin": "^1.0.4",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
-    "uglifyjs-webpack-plugin": "^1.2.5"
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "wix-style-processor": "^3.0.127"
   }
 }

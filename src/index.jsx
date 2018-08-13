@@ -1,8 +1,6 @@
-import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import s from './style1.scss';
-import './style2.scss';
-import {getProcessedCss} from '../extract-tpa-style-webpack-plugin/runtime';
+import './style.scss';
+import {Main} from './components/Main';
 import fakeTPAResponse from './fake-tpa-response';
 
 function promisfy(fn) {
@@ -14,19 +12,10 @@ Promise.all([
   promisfy(window.Wix.Styles.getSiteTextPresets),
   promisfy(window.Wix.Styles.getStyleParams)
 ]).then(([siteColors, siteTextPresets, styleParams]) => {
-  const css = getProcessedCss({siteColors, siteTextPresets, styleParams});
-  const Main = () => <div>
-    <style>{css}</style>
-    This is a TEST!
-    <div>
-      <button className={s.button}>test button</button>
-    </div>
-  </div>;
-  console.log(css);
-
   const root = document.createElement('div');
+  root.id = 'root';
   document.body.appendChild(root);
-  ReactDOM.render(<Main/>, root);
+  ReactDOM.render(<Main style={{siteColors, siteTextPresets, styleParams}}/>, root);
 });
 
 

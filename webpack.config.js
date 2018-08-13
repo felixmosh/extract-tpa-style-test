@@ -57,6 +57,9 @@ module.exports = {
     'react-dom': 'ReactDOM',
     'react': 'React'
   },
+  resolve: {
+    extensions: ['.jsx', '.js', '.json']
+  },
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js',

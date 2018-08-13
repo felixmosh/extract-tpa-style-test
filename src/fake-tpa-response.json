@@ -2466,7 +2466,20 @@
         "iconLink": 1
       },
       "booleans": {},
-      "fonts": {},
+      "fonts": {
+        "buttonTextFont": {
+          "fontStyleParam": true,
+          "style": {
+            "bold": false,
+            "italic": false,
+            "underline": true
+          },
+          "size": 25,
+          "preset": "Custom",
+          "family": "raleway-semibold",
+          "value": "font:normal normal normal 15px/18px raleway-semibold,raleway,sans-serif;"
+        }
+      },
       "googleFontsCssUrl": "//fonts.googleapis.com/css?family=Raleway:n,b,i,bi|&subset=hebrew,arabic,latin",
       "uploadFontFaces": ""
     },

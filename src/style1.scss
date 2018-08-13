@@ -1,5 +1,5 @@
 :root {
-  --bgColor: "color(color-15)";
+  --bgColor: "color(color-7)";
   --titleFontStyle: "font({theme: 'Body-M', size: '30px'})";
   --buttonBackgroundColor: "color(color-8)";
   --buttonBorderColor: "color(color-16)";
@@ -7,6 +7,7 @@
   --buttonTextFont: "font({theme: 'Body-M', size: '22px', weight: 'bold'})";
   --buttonBorderSize: "number(0)";
   --paragraphWidth: "number(50)";
+  --buttonAlignment: "string(center)";
 }
 
 body {
@@ -16,15 +17,7 @@ body {
   text-align: center;
 }
 
-h1 {
-  font: "font(--titleFontStyle)";
-}
-
-p {
-  width: "unit(--paragraphWidth, %)";
-}
-
-button {
+.button {
   outline: none;
   background-color: "color(--buttonBackgroundColor)";
   font: "font(--buttonTextFont)";
@@ -33,4 +26,5 @@ button {
   border-radius: "unit(--buttonBorderSize, px)";
   width: 250px;
   text-align: "string(--buttonAlignment)";
+  margin-START: 10px;
 }

@@ -8,13 +8,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-
-        options: {
-          presets: ['env']
-        }
+        loader: 'babel-loader'
       },
       {
         test: /\.(scss|css)$/,
@@ -26,7 +22,8 @@ module.exports = {
             loader: 'css-loader',
 
             options: {
-              sourceMap: true
+              sourceMap: true,
+              modules: true
             }
           },
           {
@@ -46,20 +43,25 @@ module.exports = {
     new HtmlWebpackPlugin(),
     new HtmlWebpackIncludeAssetsPlugin({
       assets: [
-        'https://static.parastorage.com/services/js-sdk/1.95.0/js/wix-private.min.js'
+        'https://static.parastorage.com/services/js-sdk/1.95.0/js/wix-private.min.js',
+        'https://static.parastorage.com/unpkg/react@16.3.0/umd/react.production.min.js',
+        'https://static.parastorage.com/unpkg/react-dom@16.3.0/umd/react-dom.production.min.js'
       ],
       append: false,
       publicPath: ''
     }),
     new ExtractTPAStyles()
   ],
-  entry: './src/index.js',
-
+  entry: './src/index.jsx',
+  externals: {
+    'react-dom': 'ReactDOM',
+    'react': 'React'
+  },
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist')
   },
-  devtool: false,
+  devtool: 'source-map',
   mode: 'development'
 };

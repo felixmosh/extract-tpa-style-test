@@ -1,3 +1,21 @@
+.root {
+  --bgColor: "color(color-7)";
+  --titleFontStyle: "font({theme: 'Body-M', size: '30px'})";
+  --buttonBackgroundColor: "color(color-8)";
+  --buttonBorderColor: "color(color-16)";
+  --buttonTextColor: "color(color-15)";
+  --buttonTextFont: "font({theme: 'Body-M', size: '22px', weight: 'bold'})";
+  --buttonBorderSize: "number(0)";
+  --paragraphWidth: "number(50)";
+  --buttonAlignment: "string(center)";
+  direction: DIR;
+  color: "color(color-1)";
+  background-color: "color(--bgColor)";
+  font: "font(Title)";
+  text-align: center;
+  height: 50%;
+}
+
 .button {
   outline: none;
   background-color: "color(--buttonBackgroundColor)";

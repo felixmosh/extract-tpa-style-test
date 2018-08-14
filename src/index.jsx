@@ -15,7 +15,22 @@ Promise.all([
   const root = document.createElement('div');
   root.id = 'root';
   document.body.appendChild(root);
-  ReactDOM.render(<Main style={{siteColors, siteTextPresets, styleParams}}/>, root);
+  const secondStyle = JSON.parse(JSON.stringify(styleParams));
+
+  secondStyle.colors.buttonBackgroundColor = {
+    themeName: 'color-2',
+    value: 'rgba(245,242,242,1)'
+  };
+
+  secondStyle.colors.bgColor = {
+    themeName: 'color-9',
+    value: 'rgba(100,100,100,1)'
+  };
+
+  ReactDOM.render(<div>
+    <Main style={{siteColors, siteTextPresets, styleParams}}/>
+    <Main style={{siteColors, siteTextPresets, styleParams: secondStyle}} prefix={'style-2'}/>
+  </div>, root);
 });
 
 

@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const ExtractTPAStyles = require('./extract-tpa-style-webpack-plugin/src/index');
+const ExtractTPAStyles = require('./extract-tpa-style-webpack-plugin/dist/lib/index');
 
 module.exports = {
   module: {

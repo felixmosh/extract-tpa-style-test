@@ -11,13 +11,17 @@ export class Main extends React.Component {
   }
 
   render() {
-    const css = getProcessedCss(this.props.style, {isRTL: this.state.isRTL});
+    const a = performance.now();
+    const options = Object.assign({isRTL: this.state.isRTL}, this.props.prefix ? {prefixSelector: `.${this.props.prefix}`} : {});
+
+    const css = getProcessedCss(this.props.style, options);
+    console.log(performance.now() - a);
     console.log(css);
     return (
-      <div>
+      <div className={this.props.prefix}>
         <style>{css}</style>
-        This is a TEST!
-        <div>
+        <div className={s.root}>
+          <p>This is a TEST!</p>
           <button className={s.button} onClick={() => this.setState({isRTL: !this.state.isRTL})}>test button</button>
         </div>
       </div>

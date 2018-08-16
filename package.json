@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rm -rf dist",
     "prod": "npm run clean && webpack -p",
-    "dev": "npm run clean && webpack"
+    "dev": "npm run clean && webpack",
+    "gh-pages": "gh-pages-auto-release -- --git-repo git@github.com:felixmosh/extract-tpa-style-test"
   },
   "author": "",
   "license": "ISC",
@@ -22,12 +23,13 @@
     "node-sass": "^4.9.2",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
-    "tpa-style-webpack-plugin": "0.1.1",
+    "tpa-style-webpack-plugin": "^0.1.2",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8"
   },
   "dependencies": {
+    "gh-pages-auto-release": "^1.1.10",
     "wix-style-processor": "^3.0.127"
   }
 }

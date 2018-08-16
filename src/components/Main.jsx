@@ -1,6 +1,6 @@
 import * as React from 'react';
 import s from './Main.scss';
-import {getProcessedCss} from '../../extract-tpa-style-webpack-plugin/runtime';
+import {getProcessedCss} from 'tpa-style-webpack-plugin/runtime';
 
 export class Main extends React.Component {
   constructor(props) {

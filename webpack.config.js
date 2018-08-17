@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const ExtractTPAStyles = require('tpa-style-webpack-plugin/dist/lib/index');
+const TPAStylesWebpackPlugin = require('tpa-style-webpack-plugin');
 
 module.exports = {
   module: {
@@ -50,7 +50,7 @@ module.exports = {
       append: false,
       publicPath: ''
     }),
-    new ExtractTPAStyles()
+    new TPAStylesWebpackPlugin()
   ],
   entry: './src/index.jsx',
   externals: {

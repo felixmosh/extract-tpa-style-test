@@ -2,7 +2,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const StylableWebpackPlugin = require('@stylable/webpack-plugin');
 const TPAStylesWebpackPlugin = require('tpa-style-webpack-plugin');
+
+const stylableSeparateCss = true;
 
 module.exports = {
   module: {
@@ -14,6 +17,7 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/,
+        exclude: /\.st\.css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader
@@ -49,6 +53,12 @@ module.exports = {
       ],
       append: false,
       publicPath: ''
+    }),
+    new StylableWebpackPlugin({
+      outputCSS: stylableSeparateCss,
+      filename: '[name].stylable.bundle.css',
+      includeCSSInJS: !stylableSeparateCss,
+      optimize: { classNameOptimizations: false, shortNamespaces: false },
     }),
     new TPAStylesWebpackPlugin()
   ],

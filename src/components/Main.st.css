@@ -1,0 +1,13 @@
+:import {
+  -st-from: './Header.st.css';
+  -st-default: Header;
+}
+.root {}
+
+.mappedHeader {
+  -st-extends: Header;
+}
+
+.mappedHeader::innerComp {
+  background-color: "color(color-9)";
+}

@@ -1,6 +1,7 @@
 import * as ReactDOM from 'react-dom';
+import * as React from 'react';
 import './style.scss';
-import {Main} from './components/Main';
+import {App} from './components/App';
 import fakeTPAResponse from './fake-tpa-response';
 
 function promisfy(fn) {
@@ -15,22 +16,19 @@ Promise.all([
   const root = document.createElement('div');
   root.id = 'root';
   document.body.appendChild(root);
-  const secondStyle = JSON.parse(JSON.stringify(styleParams));
+  const styleParams2 = JSON.parse(JSON.stringify(styleParams));
 
-  secondStyle.colors.buttonBackgroundColor = {
+  styleParams2.colors.buttonBackgroundColor = {
     themeName: 'color-2',
     value: 'rgba(245,242,242,1)'
   };
 
-  secondStyle.colors.bgColor = {
+  styleParams2.colors.bgColor = {
     themeName: 'color-9',
     value: 'rgba(100,100,100,1)'
   };
 
-  ReactDOM.render(<div>
-    <Main style={{siteColors, siteTextPresets, styleParams}}/>
-    <Main style={{siteColors, siteTextPresets, styleParams: secondStyle}} prefix={'style-2'}/>
-  </div>, root);
+  ReactDOM.render(<App {...{siteColors, siteTextPresets, styleParams, styleParams2}}/>, root);
 });
 
 
